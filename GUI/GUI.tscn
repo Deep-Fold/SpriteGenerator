@@ -1,0 +1,312 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://GUI/arrow.png" type="Texture" id=1]
+[ext_resource path="res://GUI/arrow-click.png" type="Texture" id=2]
+[ext_resource path="res://GUI/arrow-hover.png" type="Texture" id=3]
+[ext_resource path="res://GUI/Theme.tres" type="Theme" id=4]
+[ext_resource path="res://EquipmentPro.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://GUI/GUI.gd" type="Script" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 5 )
+
+[sub_resource type="ViewportTexture" id=3]
+viewport_path = NodePath("Viewport")
+
+[node name="GUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 0.81, 0.813167, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+anchor_right = 1.0
+margin_top = 10.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 1 )
+text = "Test"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 70.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="CenterContainer"]
+margin_left = 512.0
+margin_top = 265.0
+margin_right = 512.0
+margin_bottom = 265.0
+
+[node name="Right" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -174.0
+margin_top = 200.0
+margin_right = -64.0
+margin_bottom = -200.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left" type="TextureButton" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -850.0
+margin_top = 200.0
+margin_right = -740.0
+margin_bottom = -200.0
+rect_scale = Vector2( -1, 1 )
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OpenSettings" type="Panel" parent="."]
+self_modulate = Color( 0, 0, 0, 0.733333 )
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -104.0
+margin_right = 265.0
+margin_bottom = -52.0
+theme = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OpenSettings" type="Button" parent="OpenSettings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_right = 20.0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 4 )
+text = "Settings"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExportPanel" type="Panel" parent="."]
+self_modulate = Color( 0, 0, 0, 0.733333 )
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -52.0
+margin_right = 265.0
+theme = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExportButton" type="Button" parent="ExportPanel"]
+margin_left = 20.0
+margin_top = -2.0
+margin_right = 265.0
+margin_bottom = 44.0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 4 )
+text = "Export PNG"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="Panel" parent="."]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.733333 )
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -233.0
+margin_right = 265.0
+theme = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_right = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Settings/VBoxContainer"]
+margin_right = 235.0
+margin_bottom = 46.0
+
+[node name="Label" type="Label" parent="Settings/VBoxContainer/HBoxContainer4"]
+margin_top = 3.0
+margin_right = 201.0
+margin_bottom = 43.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 2 )
+text = "Settings"
+
+[node name="CloseSettings" type="Button" parent="Settings/VBoxContainer/HBoxContainer4"]
+margin_left = 205.0
+margin_right = 235.0
+margin_bottom = 46.0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 4 )
+text = "x"
+flat = true
+
+[node name="HSeparator" type="HSeparator" parent="Settings/VBoxContainer"]
+margin_top = 50.0
+margin_right = 235.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/VBoxContainer"]
+margin_top = 74.0
+margin_right = 235.0
+margin_bottom = 124.0
+
+[node name="Label2" type="Label" parent="Settings/VBoxContainer/HBoxContainer"]
+margin_top = 5.0
+margin_right = 115.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.7
+custom_fonts/font = SubResource( 2 )
+text = "Width:"
+
+[node name="Width" type="SpinBox" parent="Settings/VBoxContainer/HBoxContainer"]
+margin_left = 119.0
+margin_right = 235.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+theme = ExtResource( 4 )
+min_value = 10.0
+max_value = 128.0
+value = 45.0
+rounded = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Settings/VBoxContainer"]
+margin_top = 128.0
+margin_right = 235.0
+margin_bottom = 178.0
+
+[node name="Label2" type="Label" parent="Settings/VBoxContainer/HBoxContainer2"]
+margin_top = 5.0
+margin_right = 115.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.7
+custom_fonts/font = SubResource( 2 )
+text = "Height:"
+
+[node name="Height" type="SpinBox" parent="Settings/VBoxContainer/HBoxContainer2"]
+margin_left = 119.0
+margin_right = 235.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+theme = ExtResource( 4 )
+min_value = 10.0
+max_value = 128.0
+value = 45.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Settings/VBoxContainer"]
+margin_top = 182.0
+margin_right = 235.0
+margin_bottom = 228.0
+
+[node name="Label" type="Label" parent="Settings/VBoxContainer/HBoxContainer3"]
+margin_top = 3.0
+margin_right = 114.0
+margin_bottom = 43.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.7
+custom_fonts/font = SubResource( 2 )
+text = "Outline:"
+
+[node name="ToggleOutline" type="Button" parent="Settings/VBoxContainer/HBoxContainer3"]
+margin_left = 118.0
+margin_right = 235.0
+margin_bottom = 46.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+theme = ExtResource( 4 )
+text = "On"
+flat = true
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 130, 130 )
+own_world = true
+transparent_bg = true
+hdr = false
+disable_3d = true
+usage = 0
+render_target_v_flip = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0.0392157 )
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.01, 0.01 )
+texture = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Right" to="." method="_on_Right_pressed"]
+[connection signal="pressed" from="Left" to="." method="_on_Left_pressed"]
+[connection signal="pressed" from="OpenSettings/OpenSettings" to="." method="_on_OpenSettings_pressed"]
+[connection signal="pressed" from="ExportPanel/ExportButton" to="." method="_on_ExportButton_pressed"]
+[connection signal="pressed" from="Settings/VBoxContainer/HBoxContainer4/CloseSettings" to="." method="_on_CloseSettings_pressed"]
+[connection signal="value_changed" from="Settings/VBoxContainer/HBoxContainer/Width" to="." method="_on_Width_value_changed"]
+[connection signal="value_changed" from="Settings/VBoxContainer/HBoxContainer2/Height" to="." method="_on_Height_value_changed"]
+[connection signal="pressed" from="Settings/VBoxContainer/HBoxContainer3/ToggleOutline" to="." method="_on_ToggleOutline_pressed"]
